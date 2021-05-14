@@ -15,7 +15,7 @@ const Nav = () => {
               <div className="flex-shrink-0">
                 <img
                   className="h-8 w-8"
-                  src="https://media.istockphoto.com/vectors/yellow-lines-geometric-vector-logo-letter-c-vector-id1171091258?k=6&m=1171091258&s=612x612&w=0&h=VQ3FNuAsABNoNajTiYMrgc4ahbdUn7sz1zhr3VvkqY4="
+                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                   alt="Workflow"
                 />
               </div>
