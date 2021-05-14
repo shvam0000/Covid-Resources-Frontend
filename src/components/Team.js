@@ -1,8 +1,15 @@
 import React from 'react';
 
+import Card from './UI/Card';
+
 const Team = () => {
   return <div>
-      <h1>This is team page</h1>
+      <div>
+        <h1 className="text-center text-3xl underline mt-5">Team</h1>
+      </div>
+
+      {/* Card */}
+      <Card />
   </div>;
 };
 
