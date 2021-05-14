@@ -120,7 +120,7 @@ const Nav = () => {
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <Switch>
                   <Link
-                    to="/team"
+                    to="/home"
                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Home
@@ -136,7 +136,7 @@ const Nav = () => {
                 </Switch>
                 <Switch>
                   <Link
-                    to="/team"
+                    to="/add-request"
                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Add request
@@ -144,7 +144,7 @@ const Nav = () => {
                 </Switch>
                 <Switch>
                   <Link
-                    to="/team"
+                    to="/login"
                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Login
