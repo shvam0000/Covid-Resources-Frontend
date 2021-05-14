@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <React.Fragment>
       <div className="h-screen w-screen flex flex-col justify-items-center items-center">
-        <div className="bg-white w-96 shadow-xl rounded p-5">
+        <div className="bg-white w-96 shadow-2xl rounded p-5 mt-20">
           <h1 className="text-3xl font-medium">Welcome</h1>
           <p className="text-sm">Login to add Covid Resources</p>
 
