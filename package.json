@@ -8,6 +8,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "autoprefixer": "^10.2.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "path": "^0.12.7",
     "postcss": "^8.2.15",
     "postcss-cli": "^8.3.1",
     "react": "^17.0.2",
@@ -16,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "tailwindcss": "^2.1.2",
+    "util": "^0.11.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
