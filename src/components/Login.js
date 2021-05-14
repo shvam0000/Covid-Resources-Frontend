@@ -13,11 +13,13 @@ const Login = () => {
           <form className="space-y-5 mt-5">
             <input
               type="text"
-              placeholder="Email"
+              id="uid"
+              placeholder="User ID"
               className="border border-gray border-gray-800 w-full h-12 rounded px-3 focus:outline-none"
             />
             <input
               type="password"
+              id="password"
               placeholder="Password"
               className="border border-gray border-gray-800 w-full h-12 rounded px-3 focus:outline-none"
             />
