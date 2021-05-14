@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Team from './components/Team';
 import AddRequest from './components/AddRequest';
 import Home from './components/Home';
+import AddResources from './components/AddResources';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Login />
         </Route>
       </Router>
+
+      <AddResources />
     </React.Fragment>
   );
 }
