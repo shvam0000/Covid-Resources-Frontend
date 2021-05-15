@@ -10,7 +10,7 @@ import AddResources from './components/AddResources';
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Router>
         <Nav />
         <Route path="/home">
@@ -31,7 +31,7 @@ function App() {
       </Router>
 
       <AddResources />
-    </React.Fragment>
+    </>
   );
 }
 
