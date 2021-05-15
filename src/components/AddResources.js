@@ -1,118 +1,124 @@
-import React from 'react';
+import React from "react";
 
-import '../assets/main.css';
+import "../assets/main.css";
 
 const AddResources = () => {
   const resourceTypes = [
     {
-      label: 'Ambulance With Oxygen',
-      value: 'Ambulance With Oxygen',
+      label: "Ambulance With Oxygen",
+      value: "Ambulance With Oxygen",
     },
     {
-      label: 'Ambulance With Oxygen',
-      value: 'Ambulance With Oxygen',
+      label: "Ambulance With Oxygen",
+      value: "Ambulance With Oxygen",
     },
     {
-      label: 'Ambulance With ICU',
-      value: 'Ambulance With ICU',
+      label: "Ambulance With ICU",
+      value: "Ambulance With ICU",
     },
     {
-      label: 'Tiffin Service',
-      value: 'Tiffin Service',
+      label: "Tiffin Service",
+      value: "Tiffin Service",
     },
     {
-      label: 'Flowmetre',
-      value: 'Flowmetre',
+      label: "Flowmetre",
+      value: "Flowmetre",
     },
     {
-      label: 'Oxygen Kit',
-      value: 'Oxygen Kit',
+      label: "Oxygen Kit",
+      value: "Oxygen Kit",
     },
     {
-      label: 'Oxymetre',
-      value: 'Oxymetre',
+      label: "Oxymetre",
+      value: "Oxymetre",
     },
     {
-      label: 'Oxygen Refill',
-      value: 'Oxygen Refill',
+      label: "Oxygen Refill",
+      value: "Oxygen Refill",
     },
     {
-      label: 'Oxygen Concentrators',
-      value: 'Oxygen Concentrators',
+      label: "Oxygen Concentrators",
+      value: "Oxygen Concentrators",
     },
     {
-      label: 'Oxygen Cylinders',
-      value: 'Oxygen Cylinders',
+      label: "Oxygen Cylinders",
+      value: "Oxygen Cylinders",
     },
     {
-      label: 'Cremation',
-      value: 'Cremation',
+      label: "Cremation",
+      value: "Cremation",
     },
     {
-      label: 'Cremation Vehicle',
-      value: 'Cremation Vehicle',
+      label: "Cremation Vehicle",
+      value: "Cremation Vehicle",
     },
     {
-      label: 'Bipap (Sale/rent)',
-      value: 'Bipap (Sale/rent)',
+      label: "Bipap (Sale/rent)",
+      value: "Bipap (Sale/rent)",
     },
     {
-      label: 'Air Ambulance',
-      value: 'Air Ambulance',
+      label: "Air Ambulance",
+      value: "Air Ambulance",
     },
     {
-      label: 'Ambulance With Ventilator',
-      value: 'Ambulance With Ventilator',
+      label: "Ambulance With Ventilator",
+      value: "Ambulance With Ventilator",
     },
     {
-      label: 'Isolation Beds',
-      value: 'Isolation Beds',
+      label: "Isolation Beds",
+      value: "Isolation Beds",
     },
     {
-      label: 'Beds Without Oxygen',
-      value: 'Beds Without Oxygen',
+      label: "Beds Without Oxygen",
+      value: "Beds Without Oxygen",
     },
     {
-      label: 'Home ICU',
-      value: 'Home ICU',
+      label: "Home ICU",
+      value: "Home ICU",
     },
     {
-      label: 'ICU Beds with Ventilators',
-      value: 'ICU Beds with Ventilators',
+      label: "ICU Beds with Ventilators",
+      value: "ICU Beds with Ventilators",
     },
     {
-      label: 'ICU Beds without ventilators',
-      value: 'ICU Beds without ventilators',
+      label: "ICU Beds without ventilators",
+      value: "ICU Beds without ventilators",
     },
     {
-      label: 'Beds with oxygen',
-      value: 'Beds with oxygen',
+      label: "Beds with oxygen",
+      value: "Beds with oxygen",
     },
     {
-      label: 'Special Helplines',
-      value: 'Special Helplines',
+      label: "Special Helplines",
+      value: "Special Helplines",
     },
     {
-      label: 'Home / Lab testing',
-      value: 'Home / Lab testing',
+      label: "Home / Lab testing",
+      value: "Home / Lab testing",
     },
     {
-      label: 'Home Service',
-      value: 'Home Service',
+      label: "Home Service",
+      value: "Home Service",
     },
     {
-      label: 'Online / tele consultation',
-      value: 'Online / tele consultation',
+      label: "Online / tele consultation",
+      value: "Online / tele consultation",
     },
     {
-      label: 'Pet Support',
-      value: 'Pet Support',
+      label: "Pet Support",
+      value: "Pet Support",
     },
     {
-      label: 'Others',
-      value: 'Others',
+      label: "Others",
+      value: "Others",
     },
   ];
+
+  function sortBy(field) {
+    return function (a, b) {
+      return (a[field] > b[field]) - (a[field] < b[field]);
+    };
+  }
 
   return (
     <div className="flex flex-col justify-items-center items-center mt-20">
@@ -142,7 +148,7 @@ const AddResources = () => {
           />
           <label>Type of Resource</label>
           <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
-            {resourceTypes.map((option) => (
+            {resourceTypes.sort(sortBy("label")).map((option) => (
               <option value={option.value}>{option.value}</option>
             ))}
           </select>
