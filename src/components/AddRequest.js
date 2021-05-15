@@ -138,6 +138,12 @@ const AddRequest = () => {
     }
   ]
 
+  function sortBy(field) {
+    return function (a, b) {
+      return (a[field] > b[field]) - (a[field] < b[field]);
+    };
+  }
+
   return (
     <div className="flex flex-col justify-items-center items-center mt-20">
       <div>
