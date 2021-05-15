@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../assets/main.css'
 
 const AddRequest = () => {
   const stateUT = [

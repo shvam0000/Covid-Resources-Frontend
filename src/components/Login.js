@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../assets/main.css';
-
 const Login = () => {
   return (
     <React.Fragment>
