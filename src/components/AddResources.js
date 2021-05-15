@@ -2,7 +2,143 @@ import React from "react";
 
 import "../assets/main.css";
 
+
 const AddResources = () => {
+  const stateUT = [
+    {
+      label: "Andhra Pradesh",
+      value: "Andhra Pradesh"
+    },
+    {
+      label: "Arunachal Pradesh",
+      value: "Arunachal Pradesh"
+    },
+    {
+      label: "Assam",
+      value: "Assam"
+    },
+    {
+      label: "Bihar",
+      value: "Bihar"
+    },
+    {
+      label: "Chandigard",
+      value: "Chandigard"
+    },
+    {
+      label: "Chattisgarh",
+      value: "Chattisgarh"
+    },
+    {
+      label: "Dadra And Nagar Haveli (Union Territory)",
+      value: "Dadra And Nagar Haveli (Union Territory)"
+    },
+    {
+      label: "Daman And Diu (Union Territory)",
+      value: "Daman And Diu (Union Territory)"
+    },
+    {
+      label: "Delhi",
+      value: "Delhi"
+    },
+    {
+      label: "Goa",
+      value: "Goa"
+    },
+    {
+      label: "Gujarat",
+      value: "Gujarat"
+    },
+    {
+      label: "Haryana",
+      value: "Haryana"
+    },
+    {
+      label: "Himachal Pradesh",
+      value: "Himachal Pradesh"
+    },
+    {
+      label: "Jammu And Kashmir (Union Territory)",
+      value: "Jammu And Kashmir (Union Territory)"
+    },
+    {
+      label: "Jharkhand",
+      value: "Jharkhand"
+    },
+    {
+      label: "Karnataka",
+      value: "Karnataka"
+    },
+    {
+      label: "Kerala",
+      value: "Kerala"
+    },
+    {
+      label: "Ladhak",
+      value: "Ladhak"
+    },
+    {
+      label: "Madhya Pradesh",
+      value: "Madhya Pradesh"
+    },
+    {
+      label: "Maharashtra",
+      value: "Maharashtra"
+    },
+    {
+      label: "Manipur",
+      value: "Manipur"
+    },
+    {
+      label: "Meghalaya",
+      value: "Meghalaya"
+    },
+    {
+      label: "Nagaland",
+      value: "Nagaland"
+    },
+    {
+      label: "Odisha",
+      value: "Odisha"
+    },
+    {
+      label: "Pondicherry",
+      value: "Pondicherry"
+    },
+    {
+      label: "Punjab",
+      value: "Punjab"
+    },
+    {
+      label: "Rajasthan",
+      value: "Rajasthan"
+    },
+    {
+      label: "Sikkim",
+      value: "Sikkim"
+    },
+    {
+      label: "Tamil Nadu",
+      value: "Tamil Nadu"
+    },
+    {
+      label: "Telangana",
+      value: "Telangana"
+    },
+    {
+      label: "Uttar Pradesh",
+      value: "Uttar Pradesh"
+    },
+    {
+      label: "Uttrakhand",
+      value: "Uttrakhand"
+    },
+    {
+      label: "West Bengal",
+      value: "West Bengal"
+    }
+  ]
+  
   const resourceTypes = [
     {
       label: "Ambulance With Oxygen",
@@ -15,6 +151,10 @@ const AddResources = () => {
     {
       label: "Ambulance With ICU",
       value: "Ambulance With ICU",
+    },
+    {
+      label: "ECMO (Sell/Rent)",
+      value: "ECMO (Sell/Rent)",
     },
     {
       label: "Tiffin Service",
@@ -85,6 +225,10 @@ const AddResources = () => {
       value: "ICU Beds without ventilators",
     },
     {
+      label: "Beds with ECMO",
+      value: "Beds with ECMO",
+    },
+    {
       label: "Beds with oxygen",
       value: "Beds with oxygen",
     },
@@ -97,6 +241,10 @@ const AddResources = () => {
       value: "Home / Lab testing",
     },
     {
+      label: "Medicine",
+      value: "Medicine",
+    },
+    {
       label: "Home Service",
       value: "Home Service",
     },
@@ -107,6 +255,10 @@ const AddResources = () => {
     {
       label: "Pet Support",
       value: "Pet Support",
+    },
+    {
+      label: "Ventilator (Sell/Rent)",
+      value: "Ventilator (Sell/Rent)",
     },
     {
       label: "Others",
@@ -138,12 +290,22 @@ const AddResources = () => {
           />
           <label>State</label>
           {/* select for state */}
+          <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
+            {stateUT.sort(sortBy("label")).map((option) => (
+              <option value={option.value}>{option.value}</option>
+            ))}
+          </select>
           <label>City</label>
           {/* select for city */}
+          <input
+            type="text"
+            placeholder="Enter City"
+            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+          />
           <label>Verified at</label>
           <input
             type="text"
-            placeholder="Enter Time"
+            placeholder="Enter Date & Time"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <label>Type of Resource</label>
@@ -162,18 +324,6 @@ const AddResources = () => {
           <input
             type="text"
             placeholder="Enter Address"
-            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
-          />
-          <label>City</label>
-          <input
-            type="text"
-            placeholder="Enter City"
-            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
-          />
-          <label>State</label>
-          <input
-            type="text"
-            placeholder="Enter State"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <label>Timing</label>

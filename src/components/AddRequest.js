@@ -16,11 +16,11 @@ const AddRequest = () => {
             placeholder="Enter Name of the Patient"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
-          <label className="mt-10">Username of the Person Contacting us</label>
+          <label className="mt-10">Name of the Person Contacting us</label>
 
           <input
             type="text"
-            placeholder="Enter Username of the Person Contacting us"
+            placeholder="Enter Name of the Person Contacting us"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <label className="mt-5">Age</label>
