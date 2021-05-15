@@ -138,7 +138,7 @@ const AddResources = () => {
       value: "West Bengal"
     }
   ]
-  
+
   const resourceTypes = [
     {
       label: "Ambulance With Oxygen",
@@ -296,7 +296,6 @@ const AddResources = () => {
             ))}
           </select>
           <label>City</label>
-          {/* select for city */}
           <input
             type="text"
             placeholder="Enter City"
