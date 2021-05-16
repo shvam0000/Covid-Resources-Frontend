@@ -66,7 +66,6 @@ const Nav = () => {
                         <Link
                           to="/add-resource"
                           className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                          onClick={logoutHandler}
                         >
                           Add Resource
                         </Link>
@@ -175,13 +174,21 @@ const Nav = () => {
                 </Switch>
                 <Switch>
                   {userInfo ? (
-                    <Link
-                      to="/"
-                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                      onClick={logoutHandler}
-                    >
-                      Logout
-                    </Link>
+                    <>
+                      <Link
+                        to="/add-resource"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        Add Resource
+                      </Link>
+                      <Link
+                        to="/"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        onClick={logoutHandler}
+                      >
+                        Logout
+                      </Link>
+                    </>
                   ) : (
                     <Link
                       to="/login"
