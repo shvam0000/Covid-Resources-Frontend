@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
-import { Switch, Link } from 'react-router-dom'; 
-
-import '../assets/main.css';
+import { Switch, Link } from 'react-router-dom';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -150,7 +148,6 @@ const Nav = () => {
                     Login
                   </Link>
                 </Switch>
-
               </div>
             </div>
           )}

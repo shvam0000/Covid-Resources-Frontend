@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-import './assets/main.css';
 import Nav from './components/Nav';
 import Login from './components/Login';
 import Team from './components/Team';
@@ -11,7 +10,7 @@ import AddResources from './components/AddResources';
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Router>
         <Nav />
         <Route path="/home">
@@ -32,7 +31,7 @@ function App() {
       </Router>
 
       <AddResources />
-    </React.Fragment>
+    </>
   );
 }
 
