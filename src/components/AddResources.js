@@ -1,8 +1,18 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
 import "../assets/main.css";
 
-const AddResources = () => {
+const AddResources = ({ history }) => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  useEffect(() => {
+    if (!userInfo) {
+      history.push("/login");
+    }
+  }, [userInfo, history]);
+
   const resourceTypes = [
     {
       label: "Ambulance With Oxygen",
@@ -120,10 +130,28 @@ const AddResources = () => {
     };
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      name: "name",
+      type: "plasma",
+      cost: 10000,
+    };
+    try {
+      const res = await axios.post(
+        "http://localhost:5001/api/writedata",
+        formData
+      );
+      console.log(res);
+    } catch (e) {
+      throw new Error(2);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-items-center items-center mt-20">
       <div className="bg-white w-96 shadow-2xl rounded p-5">
-        <form className="space-y-5 mt-5">
+        <form className="space-y-5 mt-5" onSubmit={handleSubmit}>
           <label>Name</label>
           <input
             type="text"
