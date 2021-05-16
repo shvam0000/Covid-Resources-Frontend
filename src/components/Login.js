@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { login } from "../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./UI/Loader";
-import "../assets/main.css";
-import Message from "./UI/Message";
 
 const Login = ({ history }) => {
   const [username, setUsername] = useState("");
@@ -30,7 +28,6 @@ const Login = ({ history }) => {
     }
   };
 
-
   return (
     <>
       <div className="h-screen w-screen flex flex-col justify-items-center items-center">
@@ -39,7 +36,7 @@ const Login = ({ history }) => {
           <p className="text-sm">Login to add Covid Resources</p>
 
           {loading && <Loader />}
-          {error && <Message variant="danger">{error}</Message>}
+          {error && <h2 variant="danger">{error}</h2>}
           <form className="space-y-5 mt-5" onSubmit={handleSubmit}>
             <input
               type="text"

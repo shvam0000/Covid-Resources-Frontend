@@ -3,7 +3,6 @@ import { Transition } from "@headlessui/react";
 import { Switch, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
-import "../assets/main.css";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,13 +62,22 @@ const Nav = () => {
 
                   <Switch>
                     {userInfo ? (
-                      <Link
-                        to="/"
-                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                        onClick={logoutHandler}
-                      >
-                        Logout
-                      </Link>
+                      <>
+                        <Link
+                          to="/add-resource"
+                          className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                          onClick={logoutHandler}
+                        >
+                          Add Resource
+                        </Link>
+                        <Link
+                          to="/"
+                          className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                          onClick={logoutHandler}
+                        >
+                          Logout
+                        </Link>
+                      </>
                     ) : (
                       <Link
                         to="/login"
