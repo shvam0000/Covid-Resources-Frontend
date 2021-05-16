@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
-import { Transition } from '@headlessui/react';
-import { Switch, Link } from 'react-router-dom'; 
+import React, { useState } from "react";
+import { Transition } from "@headlessui/react";
+import { Switch, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../actions/userActions";
 
-import '../assets/main.css';
+import "../assets/main.css";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  console.log(userInfo);
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
   return (
     <div>
       <nav className="bg-gray-800">
@@ -23,7 +37,7 @@ const Nav = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Switch>
                     <Link
-                      to="/home"
+                      to="/"
                       className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Home
@@ -49,12 +63,22 @@ const Nav = () => {
                   </Switch>
 
                   <Switch>
-                    <Link
-                      to="/login"
-                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Login
-                    </Link>
+                    {userInfo ? (
+                      <Link
+                        to="/"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        onClick={logoutHandler}
+                      >
+                        Logout
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/login"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        Login
+                      </Link>
+                    )}
                   </Switch>
                 </div>
               </div>
@@ -120,7 +144,7 @@ const Nav = () => {
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <Switch>
                   <Link
-                    to="/home"
+                    to="/"
                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Home
@@ -143,14 +167,23 @@ const Nav = () => {
                   </Link>
                 </Switch>
                 <Switch>
-                  <Link
-                    to="/login"
-                    className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    Login
-                  </Link>
+                  {userInfo ? (
+                    <Link
+                      to="/"
+                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      onClick={logoutHandler}
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Login
+                    </Link>
+                  )}
                 </Switch>
-
               </div>
             </div>
           )}

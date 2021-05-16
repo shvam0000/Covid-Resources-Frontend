@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { login } from "../actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "./UI/Loader";
+import "../assets/main.css";
+import Message from "./UI/Message";
 
-import '../assets/main.css';
+const Login = ({ history }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
 
-const Login = () => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push("/add-resource");
+    }
+  }, [userInfo, history]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      setVisible(true);
+    } else {
+      dispatch(login(username, password));
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="h-screen w-screen flex flex-col justify-items-center items-center">
@@ -10,18 +37,22 @@ const Login = () => {
           <h1 className="text-3xl font-medium">Welcome</h1>
           <p className="text-sm">Login to add Covid Resources</p>
 
-          <form className="space-y-5 mt-5">
+          {loading && <Loader />}
+          {error && <Message variant="danger">{error}</Message>}
+          <form className="space-y-5 mt-5" onSubmit={handleSubmit}>
             <input
               type="text"
               id="uid"
               placeholder="User ID"
               className="border border-gray border-gray-800 w-full h-12 rounded px-3 focus:outline-none"
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
               id="password"
               placeholder="Password"
               className="border border-gray border-gray-800 w-full h-12 rounded px-3 focus:outline-none"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               type="submit"
@@ -30,6 +61,9 @@ const Login = () => {
               Submit
             </button>
           </form>
+          <h2 style={{ display: !visible ? "none" : "inline-block" }}>
+            Invalid Data
+          </h2>
         </div>
       </div>
     </React.Fragment>
