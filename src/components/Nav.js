@@ -3,7 +3,6 @@ import { Transition } from "@headlessui/react";
 import { Switch, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
-
 import "../assets/main.css";
 
 const Nav = () => {

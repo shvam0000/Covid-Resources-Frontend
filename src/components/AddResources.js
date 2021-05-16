@@ -1,118 +1,274 @@
-import React from 'react';
+import React from "react";
 
-import '../assets/main.css';
 
 const AddResources = () => {
+  const stateUT = [
+    {
+      label: "Andhra Pradesh",
+      value: "Andhra Pradesh"
+    },
+    {
+      label: "Arunachal Pradesh",
+      value: "Arunachal Pradesh"
+    },
+    {
+      label: "Assam",
+      value: "Assam"
+    },
+    {
+      label: "Bihar",
+      value: "Bihar"
+    },
+    {
+      label: "Chandigard",
+      value: "Chandigard"
+    },
+    {
+      label: "Chattisgarh",
+      value: "Chattisgarh"
+    },
+    {
+      label: "Dadra And Nagar Haveli (Union Territory)",
+      value: "Dadra And Nagar Haveli (Union Territory)"
+    },
+    {
+      label: "Daman And Diu (Union Territory)",
+      value: "Daman And Diu (Union Territory)"
+    },
+    {
+      label: "Delhi",
+      value: "Delhi"
+    },
+    {
+      label: "Goa",
+      value: "Goa"
+    },
+    {
+      label: "Gujarat",
+      value: "Gujarat"
+    },
+    {
+      label: "Haryana",
+      value: "Haryana"
+    },
+    {
+      label: "Himachal Pradesh",
+      value: "Himachal Pradesh"
+    },
+    {
+      label: "Jammu And Kashmir (Union Territory)",
+      value: "Jammu And Kashmir (Union Territory)"
+    },
+    {
+      label: "Jharkhand",
+      value: "Jharkhand"
+    },
+    {
+      label: "Karnataka",
+      value: "Karnataka"
+    },
+    {
+      label: "Kerala",
+      value: "Kerala"
+    },
+    {
+      label: "Ladhak",
+      value: "Ladhak"
+    },
+    {
+      label: "Madhya Pradesh",
+      value: "Madhya Pradesh"
+    },
+    {
+      label: "Maharashtra",
+      value: "Maharashtra"
+    },
+    {
+      label: "Manipur",
+      value: "Manipur"
+    },
+    {
+      label: "Meghalaya",
+      value: "Meghalaya"
+    },
+    {
+      label: "Nagaland",
+      value: "Nagaland"
+    },
+    {
+      label: "Odisha",
+      value: "Odisha"
+    },
+    {
+      label: "Pondicherry",
+      value: "Pondicherry"
+    },
+    {
+      label: "Punjab",
+      value: "Punjab"
+    },
+    {
+      label: "Rajasthan",
+      value: "Rajasthan"
+    },
+    {
+      label: "Sikkim",
+      value: "Sikkim"
+    },
+    {
+      label: "Tamil Nadu",
+      value: "Tamil Nadu"
+    },
+    {
+      label: "Telangana",
+      value: "Telangana"
+    },
+    {
+      label: "Uttar Pradesh",
+      value: "Uttar Pradesh"
+    },
+    {
+      label: "Uttrakhand",
+      value: "Uttrakhand"
+    },
+    {
+      label: "West Bengal",
+      value: "West Bengal"
+    }
+  ]
+
   const resourceTypes = [
     {
-      label: 'Ambulance With Oxygen',
-      value: 'Ambulance With Oxygen',
+      label: "Ambulance With Oxygen",
+      value: "Ambulance With Oxygen",
     },
     {
-      label: 'Ambulance With Oxygen',
-      value: 'Ambulance With Oxygen',
+      label: "Ambulance With Oxygen",
+      value: "Ambulance With Oxygen",
     },
     {
-      label: 'Ambulance With ICU',
-      value: 'Ambulance With ICU',
+      label: "Ambulance With ICU",
+      value: "Ambulance With ICU",
     },
     {
-      label: 'Tiffin Service',
-      value: 'Tiffin Service',
+      label: "ECMO (Sell/Rent)",
+      value: "ECMO (Sell/Rent)",
     },
     {
-      label: 'Flowmetre',
-      value: 'Flowmetre',
+      label: "Tiffin Service",
+      value: "Tiffin Service",
     },
     {
-      label: 'Oxygen Kit',
-      value: 'Oxygen Kit',
+      label: "Flowmetre",
+      value: "Flowmetre",
     },
     {
-      label: 'Oxymetre',
-      value: 'Oxymetre',
+      label: "Oxygen Kit",
+      value: "Oxygen Kit",
     },
     {
-      label: 'Oxygen Refill',
-      value: 'Oxygen Refill',
+      label: "Oxymetre",
+      value: "Oxymetre",
     },
     {
-      label: 'Oxygen Concentrators',
-      value: 'Oxygen Concentrators',
+      label: "Oxygen Refill",
+      value: "Oxygen Refill",
     },
     {
-      label: 'Oxygen Cylinders',
-      value: 'Oxygen Cylinders',
+      label: "Oxygen Concentrators",
+      value: "Oxygen Concentrators",
     },
     {
-      label: 'Cremation',
-      value: 'Cremation',
+      label: "Oxygen Cylinders",
+      value: "Oxygen Cylinders",
     },
     {
-      label: 'Cremation Vehicle',
-      value: 'Cremation Vehicle',
+      label: "Cremation",
+      value: "Cremation",
     },
     {
-      label: 'Bipap (Sale/rent)',
-      value: 'Bipap (Sale/rent)',
+      label: "Cremation Vehicle",
+      value: "Cremation Vehicle",
     },
     {
-      label: 'Air Ambulance',
-      value: 'Air Ambulance',
+      label: "Bipap (Sale/rent)",
+      value: "Bipap (Sale/rent)",
     },
     {
-      label: 'Ambulance With Ventilator',
-      value: 'Ambulance With Ventilator',
+      label: "Air Ambulance",
+      value: "Air Ambulance",
     },
     {
-      label: 'Isolation Beds',
-      value: 'Isolation Beds',
+      label: "Ambulance With Ventilator",
+      value: "Ambulance With Ventilator",
     },
     {
-      label: 'Beds Without Oxygen',
-      value: 'Beds Without Oxygen',
+      label: "Isolation Beds",
+      value: "Isolation Beds",
     },
     {
-      label: 'Home ICU',
-      value: 'Home ICU',
+      label: "Beds Without Oxygen",
+      value: "Beds Without Oxygen",
     },
     {
-      label: 'ICU Beds with Ventilators',
-      value: 'ICU Beds with Ventilators',
+      label: "Home ICU",
+      value: "Home ICU",
     },
     {
-      label: 'ICU Beds without ventilators',
-      value: 'ICU Beds without ventilators',
+      label: "ICU Beds with Ventilators",
+      value: "ICU Beds with Ventilators",
     },
     {
-      label: 'Beds with oxygen',
-      value: 'Beds with oxygen',
+      label: "ICU Beds without ventilators",
+      value: "ICU Beds without ventilators",
     },
     {
-      label: 'Special Helplines',
-      value: 'Special Helplines',
+      label: "Beds with ECMO",
+      value: "Beds with ECMO",
     },
     {
-      label: 'Home / Lab testing',
-      value: 'Home / Lab testing',
+      label: "Beds with oxygen",
+      value: "Beds with oxygen",
     },
     {
-      label: 'Home Service',
-      value: 'Home Service',
+      label: "Special Helplines",
+      value: "Special Helplines",
     },
     {
-      label: 'Online / tele consultation',
-      value: 'Online / tele consultation',
+      label: "Home / Lab testing",
+      value: "Home / Lab testing",
     },
     {
-      label: 'Pet Support',
-      value: 'Pet Support',
+      label: "Medicine",
+      value: "Medicine",
     },
     {
-      label: 'Others',
-      value: 'Others',
+      label: "Home Service",
+      value: "Home Service",
+    },
+    {
+      label: "Online / tele consultation",
+      value: "Online / tele consultation",
+    },
+    {
+      label: "Pet Support",
+      value: "Pet Support",
+    },
+    {
+      label: "Ventilator (Sell/Rent)",
+      value: "Ventilator (Sell/Rent)",
+    },
+    {
+      label: "Others",
+      value: "Others",
     },
   ];
+
+  function sortBy(field) {
+    return function (a, b) {
+      return (a[field] > b[field]) - (a[field] < b[field]);
+    };
+  }
 
   return (
     <div className="flex flex-col justify-items-center items-center mt-20">
@@ -132,17 +288,26 @@ const AddResources = () => {
           />
           <label>State</label>
           {/* select for state */}
+          <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
+            {stateUT.sort(sortBy("label")).map((option) => (
+              <option value={option.value}>{option.value}</option>
+            ))}
+          </select>
           <label>City</label>
-          {/* select for city */}
+          <input
+            type="text"
+            placeholder="Enter City"
+            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+          />
           <label>Verified at</label>
           <input
             type="text"
-            placeholder="Enter Time"
+            placeholder="Enter Date & Time"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <label>Type of Resource</label>
           <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
-            {resourceTypes.map((option) => (
+            {resourceTypes.sort(sortBy("label")).map((option) => (
               <option value={option.value}>{option.value}</option>
             ))}
           </select>
@@ -156,18 +321,6 @@ const AddResources = () => {
           <input
             type="text"
             placeholder="Enter Address"
-            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
-          />
-          <label>City</label>
-          <input
-            type="text"
-            placeholder="Enter City"
-            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
-          />
-          <label>State</label>
-          <input
-            type="text"
-            placeholder="Enter State"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <label>Timing</label>
