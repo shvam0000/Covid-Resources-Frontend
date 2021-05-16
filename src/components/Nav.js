@@ -202,6 +202,7 @@ const Nav = () => {
           <h1 className="text-3xl font-bold text-gray-900 text-center">
             Covid Resources
           </h1>
+          
         </div>
       </header>
     </div>
