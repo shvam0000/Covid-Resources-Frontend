@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import "../assets/main.css";
 
 const AddResources = ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin);
