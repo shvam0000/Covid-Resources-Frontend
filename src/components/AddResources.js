@@ -172,6 +172,7 @@ const AddResources = ({ history }) => {
             type="text"
             placeholder="Enter Time"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+            value={time}
           />
           <button
             type="submit"
