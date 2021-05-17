@@ -24,7 +24,7 @@ export const login = (username, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:5001/api/login",
+      "https://covid-19backend.herokuapp.com/api/login",
       { username, password },
       config
     );
@@ -73,7 +73,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5001/api/users/${id}`,
+      `https://covid-19backend.herokuapp.com/api/users/${id}`,
       config
     );
 
