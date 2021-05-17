@@ -1,141 +1,141 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-
-const AddResources = () => {
+const AddResources = ({ history }) => {
   const stateUT = [
     {
       label: "Andhra Pradesh",
-      value: "Andhra Pradesh"
+      value: "Andhra Pradesh",
     },
     {
       label: "Arunachal Pradesh",
-      value: "Arunachal Pradesh"
+      value: "Arunachal Pradesh",
     },
     {
       label: "Assam",
-      value: "Assam"
+      value: "Assam",
     },
     {
       label: "Bihar",
-      value: "Bihar"
+      value: "Bihar",
     },
     {
       label: "Chandigard",
-      value: "Chandigard"
+      value: "Chandigard",
     },
     {
       label: "Chattisgarh",
-      value: "Chattisgarh"
+      value: "Chattisgarh",
     },
     {
       label: "Dadra And Nagar Haveli (Union Territory)",
-      value: "Dadra And Nagar Haveli (Union Territory)"
+      value: "Dadra And Nagar Haveli (Union Territory)",
     },
     {
       label: "Daman And Diu (Union Territory)",
-      value: "Daman And Diu (Union Territory)"
+      value: "Daman And Diu (Union Territory)",
     },
     {
       label: "Delhi",
-      value: "Delhi"
+      value: "Delhi",
     },
     {
       label: "Goa",
-      value: "Goa"
+      value: "Goa",
     },
     {
       label: "Gujarat",
-      value: "Gujarat"
+      value: "Gujarat",
     },
     {
       label: "Haryana",
-      value: "Haryana"
+      value: "Haryana",
     },
     {
       label: "Himachal Pradesh",
-      value: "Himachal Pradesh"
+      value: "Himachal Pradesh",
     },
     {
       label: "Jammu And Kashmir (Union Territory)",
-      value: "Jammu And Kashmir (Union Territory)"
+      value: "Jammu And Kashmir (Union Territory)",
     },
     {
       label: "Jharkhand",
-      value: "Jharkhand"
+      value: "Jharkhand",
     },
     {
       label: "Karnataka",
-      value: "Karnataka"
+      value: "Karnataka",
     },
     {
       label: "Kerala",
-      value: "Kerala"
+      value: "Kerala",
     },
     {
       label: "Ladhak",
-      value: "Ladhak"
+      value: "Ladhak",
     },
     {
       label: "Madhya Pradesh",
-      value: "Madhya Pradesh"
+      value: "Madhya Pradesh",
     },
     {
       label: "Maharashtra",
-      value: "Maharashtra"
+      value: "Maharashtra",
     },
     {
       label: "Manipur",
-      value: "Manipur"
+      value: "Manipur",
     },
     {
       label: "Meghalaya",
-      value: "Meghalaya"
+      value: "Meghalaya",
     },
     {
       label: "Nagaland",
-      value: "Nagaland"
+      value: "Nagaland",
     },
     {
       label: "Odisha",
-      value: "Odisha"
+      value: "Odisha",
     },
     {
       label: "Pondicherry",
-      value: "Pondicherry"
+      value: "Pondicherry",
     },
     {
       label: "Punjab",
-      value: "Punjab"
+      value: "Punjab",
     },
     {
       label: "Rajasthan",
-      value: "Rajasthan"
+      value: "Rajasthan",
     },
     {
       label: "Sikkim",
-      value: "Sikkim"
+      value: "Sikkim",
     },
     {
       label: "Tamil Nadu",
-      value: "Tamil Nadu"
+      value: "Tamil Nadu",
     },
     {
       label: "Telangana",
-      value: "Telangana"
+      value: "Telangana",
     },
     {
       label: "Uttar Pradesh",
-      value: "Uttar Pradesh"
+      value: "Uttar Pradesh",
     },
     {
       label: "Uttrakhand",
-      value: "Uttrakhand"
+      value: "Uttrakhand",
     },
     {
       label: "West Bengal",
-      value: "West Bengal"
-    }
-  ]
+      value: "West Bengal",
+    },
+  ];
 
   const resourceTypes = [
     {
@@ -270,6 +270,15 @@ const AddResources = () => {
     };
   }
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  useEffect(() => {
+    if (!userInfo) {
+      history.push("/login");
+    }
+  }, [userInfo, history]);
+
   return (
     <div className="flex flex-col justify-items-center items-center mt-20">
       <div className="bg-white w-96 shadow-2xl rounded p-5">
@@ -289,8 +298,10 @@ const AddResources = () => {
           <label>State</label>
           {/* select for state */}
           <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
-            {stateUT.sort(sortBy("label")).map((option) => (
-              <option value={option.value}>{option.value}</option>
+            {stateUT.sort(sortBy("label")).map((option, id) => (
+              <option key={id} value={option.value}>
+                {option.value}
+              </option>
             ))}
           </select>
           <label>City</label>
@@ -307,8 +318,10 @@ const AddResources = () => {
           />
           <label>Type of Resource</label>
           <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
-            {resourceTypes.sort(sortBy("label")).map((option) => (
-              <option value={option.value}>{option.value}</option>
+            {resourceTypes.sort(sortBy("label")).map((option, id) => (
+              <option key={id} value={option.value}>
+                {option.value}
+              </option>
             ))}
           </select>
           <label>Cost of resources</label>
