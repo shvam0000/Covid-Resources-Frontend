@@ -289,6 +289,7 @@ const AddResources = () => {
           <label>State</label>
           {/* select for state */}
           <select className="border border-gray-800 w-full h-12 px-3 focus:outline-none">
+            <option value="All Over India">PAN India</option>
             {stateUT.sort(sortBy("label")).map((option) => (
               <option value={option.value}>{option.value}</option>
             ))}
@@ -327,6 +328,12 @@ const AddResources = () => {
           <input
             type="text"
             placeholder="Enter Time"
+            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+          />
+          <label className="mt-5">Any Other Specifications?</label> 
+          <input
+            type="text"
+            placeholder="Enter Other Specifications"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
           />
           <button
