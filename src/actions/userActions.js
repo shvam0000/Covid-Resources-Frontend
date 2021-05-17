@@ -24,12 +24,10 @@ export const login = (username, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:5001/api/login",
+      "/api/login",
       { username, password },
       config
     );
-
-    console.log(data);
 
     dispatch({
       type: USER_LOGIN_SUCCESS,
@@ -56,7 +54,7 @@ export const logout = () => async (dispatch) => {
   dispatch({ type: USER_DETIALS_RESET });
 };
 
-export const getUserDetails = (id) => async (dispatch, getState) => {
+export const getUserDetails = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_DETIALS_REQUEST,
@@ -72,14 +70,11 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(
-      `http://localhost:5001/api/users/${id}`,
-      config
-    );
+    const data = await axios.get(`/api/users/getinfo`, config);
+    console.log(data);
 
     dispatch({
       type: USER_DETIALS_SUCCESS,
-      payload: data,
     });
   } catch (error) {
     dispatch({
@@ -89,5 +84,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
           ? error.response.data.message
           : error.message,
     });
+
+    dispatch({ type: USER_LOGOUT });
   }
 };
