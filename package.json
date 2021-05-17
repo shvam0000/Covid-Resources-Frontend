@@ -3,11 +3,6 @@
   "proxy": "http://127.0.0.1:5001",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  },
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@headlessui/react": "^1.2.0",
@@ -57,5 +52,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   }
 }

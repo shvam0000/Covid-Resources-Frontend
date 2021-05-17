@@ -1,4 +1,6 @@
-import React from "react";
+
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Nav from "./components/Nav";
@@ -7,8 +9,14 @@ import Team from "./components/Team";
 import AddRequest from "./components/AddRequest";
 import Home from "./components/Home";
 import AddResources from "./components/AddResources";
+import { useDispatch } from "react-redux";
+import { getUserDetails } from "./actions/userActions";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserDetails());
+  }, []);
   return (
     <React.Fragment>
       <Router>

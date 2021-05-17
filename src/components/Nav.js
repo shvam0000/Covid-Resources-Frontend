@@ -10,8 +10,6 @@ const Nav = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  console.log(userInfo);
-
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
@@ -62,13 +60,21 @@ const Nav = () => {
 
                   <Switch>
                     {userInfo ? (
-                      <Link
-                        to="/"
-                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                        onClick={logoutHandler}
-                      >
-                        Logout
-                      </Link>
+                      <>
+                        <Link
+                          to="/add-resource"
+                          className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        >
+                          Add Resource
+                        </Link>
+                        <Link
+                          to="/"
+                          className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                          onClick={logoutHandler}
+                        >
+                          Logout
+                        </Link>
+                      </>
                     ) : (
                       <Link
                         to="/login"
@@ -166,13 +172,21 @@ const Nav = () => {
                 </Switch>
                 <Switch>
                   {userInfo ? (
-                    <Link
-                      to="/"
-                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                      onClick={logoutHandler}
-                    >
-                      Logout
-                    </Link>
+                    <>
+                      <Link
+                        to="/add-resource"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        Add Resource
+                      </Link>
+                      <Link
+                        to="/"
+                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        onClick={logoutHandler}
+                      >
+                        Logout
+                      </Link>
+                    </>
                   ) : (
                     <Link
                       to="/login"

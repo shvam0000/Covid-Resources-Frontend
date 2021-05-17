@@ -36,6 +36,7 @@ const Login = ({ history }) => {
           <p className="text-sm">Login to add Covid Resources</p>
 
           {loading && <Loader />}
+          {error && <h2>{error}</h2>}
           <form className="space-y-5 mt-5" onSubmit={handleSubmit}>
             <input
               type="text"
