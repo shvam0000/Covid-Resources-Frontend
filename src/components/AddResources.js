@@ -32,6 +32,7 @@ const AddResources = ({ history }) => {
       setCost("");
       setAddress("");
       setTime("");
+      setExtraInfo("");
       setError(false);
     }
   }, [userInfo, history, resourceStatus]);
@@ -47,18 +48,10 @@ const AddResources = ({ history }) => {
   const [cost, setCost] = useState("");
   const [address, setAddress] = useState("");
   const [time, setTime] = useState("");
+  const [info, setExtraInfo] = useState("");
 
   const checkValidForm = () => {
-    if (
-      !name ||
-      !number ||
-      !state ||
-      !city ||
-      !verified ||
-      !type ||
-      !cost ||
-      !address
-    ) {
+    if (!number || !state || !verified || !type) {
       return false;
     }
 
@@ -79,6 +72,7 @@ const AddResources = ({ history }) => {
         cost,
         address,
         time,
+        info,
       };
       dispatch(add(data));
     }
@@ -92,7 +86,7 @@ const AddResources = ({ history }) => {
           {resourceError && <h2>{resourceError}</h2>}
           {error && <h2>Please fill all the fields!</h2>}
           {resourceStatus === true ? <h2>Resouce Added</h2> : ""}
-          <label>Name</label>
+          <label>Contact Name</label>
           <input
             type="text"
             value={name}
@@ -151,7 +145,7 @@ const AddResources = ({ history }) => {
               </option>
             ))}
           </select>
-          <label>Cost of resources</label>
+          <label>Cost of Resource</label>
           <input
             type="text"
             placeholder="Enter Cost"
@@ -167,12 +161,21 @@ const AddResources = ({ history }) => {
             onChange={(e) => setAddress(e.target.value)}
             value={address}
           />
-          <label>Timing</label>
+          <label>Operatioanl Hours</label>
           <input
             type="text"
-            placeholder="Enter Time"
+            placeholder="Enter Operatioanl Hours"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+            onChange={(e) => setTime(e.target.value)}
             value={time}
+          />
+          <label>Any Extra Information</label>
+          <input
+            type="text"
+            placeholder="Enter Extra Information"
+            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+            onChange={(e) => setExtraInfo(e.target.value)}
+            value={info}
           />
           <button
             type="submit"
