@@ -52,8 +52,8 @@ export const stateUT = [
     value: "Himachal Pradesh",
   },
   {
-    label: "Jammu And Kashmir (Union Territory)",
-    value: "Jammu And Kashmir (Union Territory)",
+    label: "Jammu And Kashmir",
+    value: "Jammu And Kashmir",
   },
   {
     label: "Jharkhand",
@@ -139,8 +139,8 @@ export const resourceTypes = [
     value: "Ambulance With Oxygen",
   },
   {
-    label: "Ambulance With Oxygen",
-    value: "Ambulance With Oxygen",
+    label: "Ambulance Without Oxygen",
+    value: "Ambulance Without Oxygen",
   },
   {
     label: "Ambulance With ICU",

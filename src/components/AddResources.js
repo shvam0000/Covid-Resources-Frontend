@@ -49,16 +49,7 @@ const AddResources = ({ history }) => {
   const [time, setTime] = useState("");
 
   const checkValidForm = () => {
-    if (
-      !name ||
-      !number ||
-      !state ||
-      !city ||
-      !verified ||
-      !type ||
-      !cost ||
-      !address
-    ) {
+    if (!number || !state || !verified || !type) {
       return false;
     }
 
@@ -92,7 +83,7 @@ const AddResources = ({ history }) => {
           {resourceError && <h2>{resourceError}</h2>}
           {error && <h2>Please fill all the fields!</h2>}
           {resourceStatus === true ? <h2>Resouce Added</h2> : ""}
-          <label>Name</label>
+          <label>Contact Name</label>
           <input
             type="text"
             value={name}
@@ -172,6 +163,7 @@ const AddResources = ({ history }) => {
             type="text"
             placeholder="Enter Time"
             className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
+            onChange={(e) => setTime(e.target.value)}
             value={time}
           />
           <button

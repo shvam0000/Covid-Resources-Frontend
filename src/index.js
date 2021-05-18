@@ -8,7 +8,9 @@ import axios from "axios";
 import store from "./store";
 
 axios.defaults.baseURL = "https://covid-19backend.herokuapp.com";
-// axios.defaults.baseURL = "http://localhost:5001";
+if (process.env.NODE_ENV === "DEVELOPMENT") {
+  axios.defaults.baseURL = "http://localhost:5001";
+}
 
 ReactDOM.render(
   <Provider store={store}>
