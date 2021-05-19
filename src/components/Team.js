@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import Card from './UI/Card';
+import Card from "./UI/Card";
 
 const Team = () => {
-  return <div>
+  return (
+    <div>
       <div>
         <h1 className="text-center text-3xl underline mt-5">Team</h1>
       </div>
 
       {/* Card */}
       <Card />
-  </div>;
+    </div>
+  );
 };
 
 export default Team;
