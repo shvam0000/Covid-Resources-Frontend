@@ -7,11 +7,11 @@ import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 import store from "./store";
 
-if (process.env.NODE_ENV) {
-  axios.defaults.baseURL = "http://localhost:5001";
-} else {
+// if (process.env.NODE_ENV) {
+//   axios.defaults.baseURL = "http://localhost:5001";
+// } else {
   axios.defaults.baseURL = "https://covid-19backend.herokuapp.com";
-}
+// }
 
 ReactDOM.render(
   <Provider store={store}>
