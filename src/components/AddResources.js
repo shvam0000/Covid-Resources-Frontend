@@ -161,14 +161,6 @@ const AddResources = ({ history }) => {
             onChange={(e) => setAddress(e.target.value)}
             value={address}
           />
-          <label>Operatioanl Hours</label>
-          <input
-            type="text"
-            placeholder="Enter Operatioanl Hours"
-            className="border border-gray-800 w-full h-12 px-3 focus:outline-none"
-            onChange={(e) => setTime(e.target.value)}
-            value={time}
-          />
           <label>Any Extra Information</label>
           <input
             type="text"
