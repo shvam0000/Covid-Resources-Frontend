@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { stateUT, resourceTypes } from "../utils/utilities";
-import { useSelector, useDispatch } from "react-redux";
-import { add } from "../actions/resourceActions";
+import React, { useEffect, useState } from 'react';
+import { stateUT, resourceTypes } from '../utils/utilities';
+import { useSelector, useDispatch } from 'react-redux';
+import { add } from '../actions/resourceActions';
 
 const AddResources = ({ history }) => {
   function sortBy(field) {
@@ -20,35 +20,35 @@ const AddResources = ({ history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/login");
+      history.push('/login');
     }
     if (resourceStatus === true) {
-      setName("");
-      setNumber("");
-      setState("");
-      setCity("");
-      setVerified("");
-      setType("");
-      setCost("");
-      setAddress("");
-      setTime("");
-      setExtraInfo("");
+      setName('');
+      setNumber('');
+      setState('');
+      setCity('');
+      setVerified('');
+      setType('');
+      setCost('');
+      setAddress('');
+      setTime('');
+      setExtraInfo('');
       setError(false);
     }
   }, [userInfo, history, resourceStatus]);
 
   const [error, setError] = useState(false);
 
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [state, setState] = useState("");
-  const [city, setCity] = useState("");
-  const [verified, setVerified] = useState("");
-  const [type, setType] = useState("");
-  const [cost, setCost] = useState("");
-  const [address, setAddress] = useState("");
-  const [time, setTime] = useState("");
-  const [info, setExtraInfo] = useState("");
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  const [state, setState] = useState('');
+  const [city, setCity] = useState('');
+  const [verified, setVerified] = useState('');
+  const [type, setType] = useState('');
+  const [cost, setCost] = useState('');
+  const [address, setAddress] = useState('');
+  const [time, setTime] = useState('');
+  const [info, setExtraInfo] = useState('');
 
   const checkValidForm = () => {
     if (!number || !state || !verified || !type) {
@@ -74,6 +74,8 @@ const AddResources = ({ history }) => {
         time,
         info,
       };
+
+      console.log(data);
       dispatch(add(data));
     }
   };
@@ -85,7 +87,7 @@ const AddResources = ({ history }) => {
           {loading && <h2>Loading...</h2>}
           {resourceError && <h2>{resourceError}</h2>}
           {error && <h2>Please fill all the fields!</h2>}
-          {resourceStatus === true ? <h2>Resouce Added</h2> : ""}
+          {resourceStatus === true ? <h2>Resouce Added</h2> : ''}
           <label>Contact Name</label>
           <input
             type="text"
@@ -110,7 +112,7 @@ const AddResources = ({ history }) => {
             value={state}
           >
             <option> Select</option>
-            {stateUT.sort(sortBy("label")).map((option, id) => (
+            {stateUT.sort(sortBy('label')).map((option, id) => (
               <option key={id} value={option.value}>
                 {option.value}
               </option>
@@ -139,7 +141,7 @@ const AddResources = ({ history }) => {
             value={type}
           >
             <option> Select</option>
-            {resourceTypes.sort(sortBy("label")).map((option, id) => (
+            {resourceTypes.sort(sortBy('label')).map((option, id) => (
               <option key={id} value={option.value}>
                 {option.value}
               </option>
@@ -161,7 +163,7 @@ const AddResources = ({ history }) => {
             onChange={(e) => setAddress(e.target.value)}
             value={address}
           />
-          <label>Operatioanl Hours</label>
+          <label>Operational Hours</label>
           <input
             type="text"
             placeholder="Enter Operatioanl Hours"
