@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserDetails());
-  }, []);
+  }, [dispatch]);
   return (
     <React.Fragment>
       <Router>
