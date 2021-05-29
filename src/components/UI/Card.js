@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="flex justify-center w-screen mt-10">
+    <div className="flex lg:flex-row md:flex-col sm:flex-col justify-center content-center">
       <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2">
         <img
           src="https://avatars.githubusercontent.com/u/52779730?v=4"
