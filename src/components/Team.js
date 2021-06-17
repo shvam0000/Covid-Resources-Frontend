@@ -1,16 +1,31 @@
-import React from "react";
-
-import Card from "./UI/Card";
+import Card from './UI/Card';
 
 const Team = () => {
-  return (
-    <div>
-      <div>
-        <h1 className="text-center text-3xl underline mt-5">Team</h1>
-      </div>
+  const members = [
+    {
+      name: 'Shivam',
+      src: 'https://avatars.githubusercontent.com/u/52779730?v=4',
+    },
+    {
+      name: 'Kartik',
+      src: 'https://avatars.githubusercontent.com/u/60486289?v=4',
+    },
+    {
+      name: 'Faraz',
+      src: 'https://avatars.githubusercontent.com/u/53421337?v=4',
+    },
+  ];
 
-      {/* Card */}
-      <Card />
+  return (
+    <div className='flex justify-evenly'>
+      {members.map((member) => (
+        <Card
+          key={member.name}
+          src={member.src}
+          alt={member.name}
+          name={member.name}
+        />
+      ))}
     </div>
   );
 };
